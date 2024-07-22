@@ -1,6 +1,23 @@
-const add = require('./util.js');
-console.log("hello")
+import validator from "validator";
+import chalk from "chalk";
+import getNotes from "./notes.js";
+import yargs from "yargs";
+import {hideBin} from 'yargs/helpers'
 
-const res = add(3,5)
 
-console.log(res)
+
+const argv = yargs(hideBin(process.argv))
+.command('add','add a note',()=>{
+    console.log("adding a new note");
+})
+.command('remove','remove a note',()=>{
+    console.log("removing a note");
+})
+.help()
+.argv;
+
+
+const mesg = getNotes();
+console.log(mesg);
+
+console.log(argv)

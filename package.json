@@ -1,12 +1,18 @@
 {
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "nodemon": "^3.1.4",
+    "validator": "^13.12.0",
+    "yargs": "^17.7.2"
+  },
   "name": "notes-app",
   "version": "1.0.0",
-  "description": "a simple terminal based notes app",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Akshay Koni",
-  "license": "ISC"
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
