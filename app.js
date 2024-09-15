@@ -1,6 +1,6 @@
 import validator from "validator";
 import chalk from "chalk";
-import getNotes from "./notes.js";
+import notes from "./notes.js";
 import yargs from "yargs";
 import {hideBin} from 'yargs/helpers'
 
@@ -15,8 +15,14 @@ const argv = yargs(hideBin(process.argv))
             demandOption:true
 
         })
+        .option('body',{
+            describe: 'body of the note',
+            type: 'string',
+
+        })
     },(argv)=>{
-        console.log(`adding a new note with title ${argv.title}`);
+        notes.addNotes(argv.title,argv.body);
+
     })
     .command('remove','remove a note',()=>{
         console.log("removing a note");
@@ -31,7 +37,11 @@ const argv = yargs(hideBin(process.argv))
     .argv;
 
 
-const mesg = getNotes();
-// console.log(mesg);
+const mesg = notes.getNotes();
+console.log("the notes is ", mesg);
 
-// console.log(argv)
+// console.log(mesg);
+// need to add those mesg to work with yargs 
+
+
+console.log(argv)
